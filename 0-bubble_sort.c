@@ -15,18 +15,7 @@
      *b = *a;
      *a = tmp;
  }
-bool is_sorted(int array[], size)
-{
-	size_t i;
 
-	for (i = 0; i < size - 1; i++)
-	{
-		if (array[i] > array[i + 1])
-		{
-			return false;
-		}
-	}
-	return true;
 /**
  *  bubble_sort - sorting function
  *  Description:  sorting alogrthim bubble sort
@@ -36,15 +25,19 @@ bool is_sorted(int array[], size)
 */
 void bubble_sort(int *array, size_t size)
 {
-    size_t i;
-    
-
-    for (i = 0; i < size - 1; i++)
-    {
-	    if ((is_sotred(array), size) == false)
-	    {
-		swap(&array[i], &array[i+1]);
-	    }
-	    
-    }
+	size_t i;
+    	int flag; 
+	flag = -1;
+	
+	while (flag != 0)
+	{
+		flag = 0;
+		if (array[i] < array[i + 1])
+		{
+			swap(&array[i], &array[i + 1]);
+			print_array(array, size);
+			flag++;
+		}
+	}
+	
 }
